@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"beego-rest-api/database"
+	"beego-rest-api/models"
 
 	"github.com/beego/beego/v2/client/orm"
 	beego "github.com/beego/beego/v2/server/web"
@@ -12,7 +12,8 @@ type RegistrationController struct {
 }
 
 func (this *RegistrationController) Post() {
-	var req database.UserForm
+	//var req database.UserForm
+	var req models.UserData
 	req.FirstName = this.GetString("firstname")
 	req.LastName = this.GetString("lastname")
 	req.Phone = this.GetString("phone")

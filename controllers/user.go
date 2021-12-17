@@ -42,18 +42,19 @@ func (u *UserController) GetAll() {
 // @Success 200 {object} models.User
 // @Failure 403 :uid is empty
 // @router /:uid [get]
-func (u *UserController) Get() {
-	uid := u.GetString(":uid")
-	if uid != "" {
-		user, err := models.GetUser(uid)
-		if err != nil {
-			u.Data["json"] = err.Error()
-		} else {
-			u.Data["json"] = user
-		}
-	}
-	u.ServeJSON()
-}
+
+//func (u *UserController) Get() {
+//	uid := u.GetString(":uid")
+//	if uid != "" {
+//		user, err := models.GetUser(uid)
+//		if err != nil {
+//			u.Data["json"] = err.Error()
+//		} else {
+//			u.Data["json"] = user
+//		}
+//	}
+//	u.ServeJSON()
+//}
 
 // @Title Update
 // @Description update the user
@@ -62,20 +63,21 @@ func (u *UserController) Get() {
 // @Success 200 {object} models.User
 // @Failure 403 :uid is not int
 // @router /:uid [put]
-func (u *UserController) Put() {
-	uid := u.GetString(":uid")
-	if uid != "" {
-		var user models.User
-		json.Unmarshal(u.Ctx.Input.RequestBody, &user)
-		uu, err := models.UpdateUser(uid, &user)
-		if err != nil {
-			u.Data["json"] = err.Error()
-		} else {
-			u.Data["json"] = uu
-		}
-	}
-	u.ServeJSON()
-}
+
+//func (u *UserController) Put() {
+//	uid := u.GetString(":uid")
+//	if uid != "" {
+//		var user models.User
+//		json.Unmarshal(u.Ctx.Input.RequestBody, &user)
+//		uu, err := models.UpdateUser(uid, &user)
+//		if err != nil {
+//			u.Data["json"] = err.Error()
+//		} else {
+//			u.Data["json"] = uu
+//		}
+//	}
+//	u.ServeJSON()
+//}
 
 // @Title Delete
 // @Description delete the user
@@ -83,12 +85,13 @@ func (u *UserController) Put() {
 // @Success 200 {string} delete success!
 // @Failure 403 uid is empty
 // @router /:uid [delete]
-func (u *UserController) Delete() {
-	uid := u.GetString(":uid")
-	models.DeleteUser(uid)
-	u.Data["json"] = "delete success!"
-	u.ServeJSON()
-}
+
+//func (u *UserController) Delete() {
+//	uid := u.GetString(":uid")
+//	models.DeleteUser(uid)
+//	u.Data["json"] = "delete success!"
+//	u.ServeJSON()
+//}
 
 // @Title Login
 // @Description Logs user into the system
@@ -116,4 +119,3 @@ func (u *UserController) Logout() {
 	u.Data["json"] = "logout success"
 	u.ServeJSON()
 }
-

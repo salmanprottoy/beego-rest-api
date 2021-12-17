@@ -14,7 +14,7 @@ import (
 )
 
 func init() {
-	beego.Router("/register", &controllers.RegistrationController{})
+	//beego.Router("/register", &controllers.RegistrationController{})
 	ns := beego.NewNamespace("/v1",
 		beego.NSNamespace("/object",
 			beego.NSInclude(
@@ -24,6 +24,11 @@ func init() {
 		beego.NSNamespace("/user",
 			beego.NSInclude(
 				&controllers.UserController{},
+			),
+		),
+		beego.NSNamespace("/register",
+			beego.NSInclude(
+				&controllers.RegistrationController{},
 			),
 		),
 	)
