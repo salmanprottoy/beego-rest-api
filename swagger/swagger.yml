@@ -60,30 +60,6 @@ paths:
             $ref: '#/definitions/models.Object'
         "403":
           description: :objectId is empty
-    put:
-      tags:
-      - object
-      description: update the object
-      operationId: ObjectController.Update
-      parameters:
-      - in: path
-        name: objectId
-        description: The objectid you want to update
-        required: true
-        type: string
-      - in: body
-        name: body
-        description: The body
-        required: true
-        schema:
-          $ref: '#/definitions/models.Object'
-      responses:
-        "200":
-          description: ""
-          schema:
-            $ref: '#/definitions/models.Object'
-        "403":
-          description: :objectId is empty
     delete:
       tags:
       - object
@@ -164,13 +140,18 @@ definitions:
     title: Object
     type: object
     properties:
-      ObjectId:
+      DateOfBrith:
         type: string
-      PlayerName:
+      Email:
         type: string
-      Score:
-        type: integer
-        format: int64
+      FirstName:
+        type: string
+      LastName:
+        type: string
+      Password:
+        type: string
+      Phone:
+        type: string
   models.Profile:
     title: Profile
     type: object

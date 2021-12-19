@@ -78,6 +78,6 @@ func Login(username, password string) bool {
 	return false
 }
 
-//func DeleteUser(uid string) {
-//	delete(UserList, uid)
-//}
+func DeleteUser(uid string) {
+	delete(UserList, uid)
+}

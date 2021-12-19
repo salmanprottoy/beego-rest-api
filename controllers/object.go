@@ -63,7 +63,7 @@ func (o *ObjectController) GetAll() {
 // @Success 200 {object} models.Object
 // @Failure 403 :objectId is empty
 // @router /:objectId [put]
-func (o *ObjectController) Put() {
+/* func (o *ObjectController) Put() {
 	objectId := o.Ctx.Input.Param(":objectId")
 	var ob models.Object
 	json.Unmarshal(o.Ctx.Input.RequestBody, &ob)
@@ -75,7 +75,7 @@ func (o *ObjectController) Put() {
 		o.Data["json"] = "update success!"
 	}
 	o.ServeJSON()
-}
+} */
 
 // @Title Delete
 // @Description delete the object
