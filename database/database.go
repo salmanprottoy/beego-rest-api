@@ -12,7 +12,7 @@ type UserForm struct {
 	Phone       string `json:"phone" orm:"size(50)`
 	Email       string `json:"email" orm:"size(64);unique"`
 	Password    string `json:"password"`
-	DateOfBrith string `json:"dob"`
+	DateOfBirth string `json:"dob"`
 }
 
 type Orm struct {
