@@ -1,4 +1,4 @@
-# _Beego RestAPI_ #
+# _Beego RestAPI_
 
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
@@ -15,3 +15,13 @@
     <img alt="Visit: " src="https://badges.pufler.dev/visits/salmanprottoy/beego-rest-api" />
   </a>  
 </p>
+
+## Prerequisite ## 
+
+- Go
+- PostgreSQL
+
+## Usage ##
+
+- Run `go mod tidy`
+- Run `bee run`
