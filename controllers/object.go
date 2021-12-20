@@ -21,8 +21,8 @@ type ObjectController struct {
 func (o *ObjectController) Post() {
 	var ob models.Object
 	json.Unmarshal(o.Ctx.Input.RequestBody, &ob)
-	objectid := models.AddOne(ob)
-	o.Data["json"] = map[string]string{"ObjectId": objectid}
+	msg := models.AddOne(ob)
+	o.Data["json"] = map[string]string{"Message": msg}
 	o.ServeJSON()
 }
 

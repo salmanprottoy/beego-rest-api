@@ -59,11 +59,18 @@ func AddOne(object Object) (ObjectId string) {
 		insertDynStmt := `insert into "user_form" ("first_name", "last_name", "phone", "email", "password", "date_of_birth") values($1, $2, $3, $4, $5, $6)`
 		_, e := db.Exec(insertDynStmt, object.FirstName, object.LastName, object.Phone, object.Email, hash, object.DateOfBrith)
 		CheckError(e)
+	} else if !email {
+		return "Invalid email!"
+	} else if !date {
+		return "Invalid date!"
+	} else if !phone {
+		return "Invalid phone number!"
 	} else {
 		return "Invalid Inputs"
 	}
 	Objects[object.Email] = &object
-	return object.Email
+	msg := "New user = " + object.Email + " "
+	return msg
 }
 func CheckError(err error) {
 	if err != nil {
